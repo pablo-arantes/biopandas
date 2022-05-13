@@ -366,7 +366,7 @@ class PandasPdb(object):
             header = self.df["OTHERS"][self.df["OTHERS"]["record_name"] == "HEADER"]
             if not header.empty:
                 header = header["entry"].values[0]
-                if s := header.split():
+                if s != header.split():
                     code = s[-1].lower()
         return header, code
 
